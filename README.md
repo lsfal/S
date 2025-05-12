@@ -5,7 +5,7 @@
   <title>SAFA 💌</title>
   <style>
     body {
-      background-color: #fdf6f9;
+      background-color: #98AFC7;
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 100px;
