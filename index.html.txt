@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SAFA 💌</title>
+  <style>
+    body {
+      background-color: #98AFC7;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #message {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    #envelope {
+      font-size: 100px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    #envelope:hover {
+      transform: scale(1.1);
+    }
+
+    #video {
+      margin-top: 20px;
+      width: 120px;
+      height: 90px;
+      border-radius: 10px;
+      display: none;
+      animation: popUp 0.6s ease-out forwards;
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: translateY(20px) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="message">Click on the envelope to open it.</div>
+  <div id="envelope">💌</div>
+  <video id="video" autoplay playsinline></video>
+
+  <script>
+    const envelope = document.getElementById("envelope");
+    const video = document.getElementById("video");
+
+    envelope.onclick = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
+        video.srcObject = stream;
+        video.style.display = "block";
+      } catch (err) {
+        alert("Couldn't open the camera: " + err.message);
+      }
+    };
+  </script>
+
+</body>
+</html>
