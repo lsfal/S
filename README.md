@@ -24,16 +24,15 @@
       color: #333;
     }
     video {
-      margin-top: 20px;
-      width: 300px;
-      height: auto;
-      display: none;
-      border-radius: 10px;
+      
+  margin: 40px auto 0 auto;
+  display: none;
+  display: block;
     }
   </style>
 </head>
 <body>
-  <div id="message">Welcome to SAFA's world 💖<br>Click the envelope!</div>
+  <div id="message">Click on the envelope to open it.
   <div id="envelope">💌</div>
   <video id="video" autoplay playsinline></video>
 
